@@ -1,7 +1,7 @@
-package com.qingyun.springframe.beans.factory.support;
+package com.qingyun.springframework.beans.factory.support;
 
-import com.qingyun.springframe.beans.BeansException;
-import com.qingyun.springframe.beans.factory.config.SingletonBeanRegistry;
+import com.qingyun.springframework.beans.BeansException;
+import com.qingyun.springframework.beans.factory.config.SingletonBeanRegistry;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

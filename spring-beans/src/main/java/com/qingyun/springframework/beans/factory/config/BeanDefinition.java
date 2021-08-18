@@ -1,4 +1,4 @@
-package com.qingyun.springframe.beans.factory.config;
+package com.qingyun.springframework.beans.factory.config;
 
 /**
  * @description： Bean的定义信息，对应于spring源码中解析xml文件后获取到的Bean定义信息

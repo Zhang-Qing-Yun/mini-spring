@@ -1,4 +1,4 @@
-package com.qingyun.springframe.beans.factory.config;
+package com.qingyun.springframework.beans.factory.config;
 
 /**
  * @description： 单例注册表，管理和维护单例对象

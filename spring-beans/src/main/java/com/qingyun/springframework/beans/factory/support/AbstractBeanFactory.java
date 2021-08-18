@@ -1,8 +1,8 @@
-package com.qingyun.springframe.beans.factory.support;
+package com.qingyun.springframework.beans.factory.support;
 
-import com.qingyun.springframe.beans.BeansException;
-import com.qingyun.springframe.beans.factory.BeanFactory;
-import com.qingyun.springframe.beans.factory.config.BeanDefinition;
+import com.qingyun.springframework.beans.BeansException;
+import com.qingyun.springframework.beans.factory.BeanFactory;
+import com.qingyun.springframework.beans.factory.config.BeanDefinition;
 
 /**
  * @description： BeanFactory的抽象实现类，实现了获取bean的逻辑过程

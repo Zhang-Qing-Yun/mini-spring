@@ -1,6 +1,6 @@
-package com.qingyun.springframe.beans.factory;
+package com.qingyun.springframework.beans.factory;
 
-import com.qingyun.springframe.beans.BeansException;
+import com.qingyun.springframework.beans.BeansException;
 
 /**
  * @description： 整个spring的根接口，bean的工厂，负责创建、维护以及供客户端获取bean

@@ -1,7 +1,7 @@
-package com.qingyun.springframe.beans.factory.support;
+package com.qingyun.springframework.beans.factory.support;
 
-import com.qingyun.springframe.beans.BeansException;
-import com.qingyun.springframe.beans.factory.config.BeanDefinition;
+import com.qingyun.springframework.beans.BeansException;
+import com.qingyun.springframework.beans.factory.config.BeanDefinition;
 
 /**
  * @description： bean定义信息的注册表

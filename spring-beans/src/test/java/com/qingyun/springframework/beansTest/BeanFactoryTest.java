@@ -1,7 +1,7 @@
 package com.qingyun.springframework.beansTest;
 
-import com.qingyun.springframe.beans.factory.config.BeanDefinition;
-import com.qingyun.springframe.beans.factory.support.DefaultListableBeanFactory;
+import com.qingyun.springframework.beans.factory.config.BeanDefinition;
+import com.qingyun.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.junit.Test;
 
 /**

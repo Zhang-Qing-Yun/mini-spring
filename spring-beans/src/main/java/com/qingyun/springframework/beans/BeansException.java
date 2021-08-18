@@ -1,4 +1,4 @@
-package com.qingyun.springframe.beans;
+package com.qingyun.springframework.beans;
 
 /**
  * @description： 有关bean的异常
