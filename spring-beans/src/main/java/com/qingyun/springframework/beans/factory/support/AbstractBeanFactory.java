@@ -20,9 +20,26 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 
         //  当单例注册表中不存在单例对象时，需要去获取bean的定义信息并且去创建bean
         BeanDefinition beanDefinition = getBeanDefinition(name);
-        Object bean = createBean(name, beanDefinition);
+        Object bean = createBean(name, beanDefinition, null);
 
         //  将创建的bean对象添加到单例注册表中
+        registerSingleton(name, bean);
+        return bean;
+    }
+
+    @Override
+    public Object getBean(String name, Object... args) throws BeansException {
+        return doGetBean(name, args);
+    }
+
+    protected <T> T doGetBean(final String name, final Object[] args) {
+        Object singleton = getSingleton(name);
+        if (singleton != null) {
+            return (T) singleton;
+        }
+
+        BeanDefinition beanDefinition = getBeanDefinition(name);
+        T bean = (T) createBean(name, beanDefinition, args);
         registerSingleton(name, bean);
         return bean;
     }
@@ -39,8 +56,9 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
      * 根据定义信息去创建bean对象
      * @param beanName bean的名字
      * @param beanDefinition bean的定义信息
+     * @param args 创建bean对象时的构造器参数
      * @return bean对象
      * @throws BeansException 出错时的异常
      */
-    protected abstract Object createBean(String beanName, BeanDefinition beanDefinition) throws BeansException;
+    protected abstract Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) throws BeansException;
 }

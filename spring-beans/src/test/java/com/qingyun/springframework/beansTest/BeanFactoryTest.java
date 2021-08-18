@@ -15,12 +15,14 @@ public class BeanFactoryTest {
         // 1.初始化 BeanFactory
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
         // 2.注册 bean
-        BeanDefinition beanDefinition = new BeanDefinition(Object.class);
-        beanFactory.registerBeanDefinition("object", beanDefinition);
+        BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
+        beanFactory.registerBeanDefinition("userService", beanDefinition);
+
         // 3.第一次获取 bean
-        Object object = beanFactory.getBean("object");
-        // 4.第二次获取 bean from Singleton
-        Object object2 = beanFactory.getBean("object");
-        assert object == object2;
+        UserService userService = (UserService) beanFactory.getBean("userService");
+//        // 4.第二次获取 bean from Singleton
+//        Object object2 = beanFactory.getBean("object");
+//        assert object == object2;
+        System.out.println(userService.getUser());
     }
 }

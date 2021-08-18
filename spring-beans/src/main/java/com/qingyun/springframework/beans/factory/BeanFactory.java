@@ -15,4 +15,13 @@ public interface BeanFactory {
      * @throws BeansException 出错时抛出该异常
      */
     Object getBean(String name) throws BeansException;
+
+    /**
+     * 从IOC容器中获取bean对象并且指定创建对象使用的构造器参数
+     * @param name 该bean对象注册时的名字
+     * @param args 创建该bean时的构造器参数，倘若无该参数对应的构造器则报错，如：无空参构造器但是args==null时报错
+     * @return bean对象
+     * @throws BeansException 出错时抛出该异常
+     */
+    Object getBean(String name, Object... args) throws BeansException;
 }
