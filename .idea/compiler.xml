@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mini-spring" />
+        <module name="spring-beans" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mini-spring" target="1.8" />
+      <module name="spring-beans" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
