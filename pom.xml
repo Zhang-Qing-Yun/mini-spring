@@ -10,6 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>spring-beans</module>
+        <module>spring-core</module>
+        <module>spring-common</module>
     </modules>
 
     <dependencies>

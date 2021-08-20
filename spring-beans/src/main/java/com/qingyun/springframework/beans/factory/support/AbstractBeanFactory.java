@@ -10,6 +10,7 @@ import com.qingyun.springframework.beans.factory.config.BeanDefinition;
  * @create: 2021-08-18 18:09
  **/
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
+
     @Override
     public Object getBean(String name) throws BeansException {  // 此处应用模板方法模式
         //  先去查单例注册表
@@ -30,6 +31,11 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
     @Override
     public Object getBean(String name, Object... args) throws BeansException {
         return doGetBean(name, args);
+    }
+
+    @Override
+    public <T> T getBean(String name, Class<T> requiredType) throws BeansException {
+        return (T) getBean(name);
     }
 
     protected <T> T doGetBean(final String name, final Object[] args) {

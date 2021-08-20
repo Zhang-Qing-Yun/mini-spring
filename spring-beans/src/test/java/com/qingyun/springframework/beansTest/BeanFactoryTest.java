@@ -44,7 +44,7 @@ public class BeanFactoryTest {
 
     @Test
     public void beanTest3() {
-// 1.初始化 BeanFactory
+        // 1.初始化 BeanFactory
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
 
         // 2. UserDao 注册

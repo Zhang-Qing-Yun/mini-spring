@@ -24,4 +24,14 @@ public interface BeanFactory {
      * @throws BeansException 出错时抛出该异常
      */
     Object getBean(String name, Object... args) throws BeansException;
+
+    /**
+     * 根据bean的名字和类型来获取bean对象
+     * @param name bean的名字
+     * @param requiredType bean的类型
+     * @param <T> bean的类型
+     * @return bean
+     * @throws BeansException 出错时抛出该异常
+     */
+    <T> T getBean(String name, Class<T> requiredType) throws BeansException;
 }
