@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/mini-spring.iml" filepath="$PROJECT_DIR$/.idea/mini-spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-beans/spring-beans.iml" filepath="$PROJECT_DIR$/spring-beans/spring-beans.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-common/spring-common.iml" filepath="$PROJECT_DIR$/spring-common/spring-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-context/spring-context.iml" filepath="$PROJECT_DIR$/spring-context/spring-context.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-core/spring-core.iml" filepath="$PROJECT_DIR$/spring-core/spring-core.iml" />
     </modules>
   </component>

@@ -1,15 +1,21 @@
 package com.qingyun.springframework.beans.factory.support;
 
 import com.qingyun.springframework.beans.BeansException;
-import com.qingyun.springframework.beans.factory.BeanFactory;
 import com.qingyun.springframework.beans.factory.config.BeanDefinition;
+import com.qingyun.springframework.beans.factory.config.BeanPostProcessor;
+import com.qingyun.springframework.beans.factory.config.ConfigurableBeanFactory;
+
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * @description： BeanFactory的抽象实现类，实现了获取bean的逻辑过程
  * @author: 張青云
  * @create: 2021-08-18 18:09
  **/
-public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements BeanFactory {
+public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements ConfigurableBeanFactory {
+    //  用来存储BeanPostProcessor
+    private final List<BeanPostProcessor> beanPostProcessors = new CopyOnWriteArrayList<>();
 
     @Override
     public Object getBean(String name) throws BeansException {  // 此处应用模板方法模式
@@ -36,6 +42,12 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
     @Override
     public <T> T getBean(String name, Class<T> requiredType) throws BeansException {
         return (T) getBean(name);
+    }
+
+    @Override
+    public void addBeanPostProcessor(BeanPostProcessor beanPostProcessor){
+        this.beanPostProcessors.remove(beanPostProcessor);
+        this.beanPostProcessors.add(beanPostProcessor);
     }
 
     protected <T> T doGetBean(final String name, final Object[] args) {
@@ -67,4 +79,8 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
      * @throws BeansException 出错时的异常
      */
     protected abstract Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) throws BeansException;
+
+    public List<BeanPostProcessor> getBeanPostProcessors() {
+        return this.beanPostProcessors;
+    }
 }

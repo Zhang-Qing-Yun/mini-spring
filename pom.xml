@@ -12,6 +12,7 @@
         <module>spring-beans</module>
         <module>spring-core</module>
         <module>spring-common</module>
+        <module>spring-context</module>
     </modules>
 
     <dependencies>

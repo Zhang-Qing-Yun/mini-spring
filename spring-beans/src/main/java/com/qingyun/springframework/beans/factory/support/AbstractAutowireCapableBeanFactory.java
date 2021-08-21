@@ -4,7 +4,9 @@ import cn.hutool.core.bean.BeanUtil;
 import com.qingyun.springframework.beans.BeansException;
 import com.qingyun.springframework.beans.factory.PropertyValue;
 import com.qingyun.springframework.beans.factory.PropertyValues;
+import com.qingyun.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import com.qingyun.springframework.beans.factory.config.BeanDefinition;
+import com.qingyun.springframework.beans.factory.config.BeanPostProcessor;
 import com.qingyun.springframework.beans.factory.config.BeanReference;
 
 import java.lang.reflect.Constructor;
@@ -14,7 +16,7 @@ import java.lang.reflect.Constructor;
  * @author: 張青云
  * @create: 2021-08-18 18:29
  **/
-public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory{
+public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFactory implements AutowireCapableBeanFactory {
     //  指定实例化方式的策略，默认使用JDK反射的方式
     private InstantiationStrategy instantiation = new SimpleInstantiationStrategy();
 
@@ -29,6 +31,8 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
                     beanDefinition.getPropertyValues().getPropertyValues().length != 0) {
                 applyPropertyValues(beanName, bean, beanDefinition);
             }
+            // 执行Bean的初始化方法和BeanPostProcessor的前置和后置处理方法
+            bean = initializeBean(beanName, bean, beanDefinition);
         } catch (Exception e) {
             throw new BeansException("Instantiation of bean failed", e);
         }
@@ -64,13 +68,12 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         try {
             PropertyValues propertyValues = beanDefinition.getPropertyValues();
             for (PropertyValue propertyValue: propertyValues.getPropertyValues()) {
-
                 String name = propertyValue.getName();
                 Object value = propertyValue.getValue();
 
                 if (value instanceof BeanReference) {
                     //  TODO 没有解决循环依赖问题
-                    // A 依赖 B，获取 B 的实例
+                    //  A依赖B，获取B的实例
                     BeanReference beanReference = (BeanReference) value;
                     value = getBean(beanReference.getBeanName());
                 }
@@ -80,6 +83,50 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
         } catch (Exception e) {
             throw new BeansException("Error setting property values：" + beanName);
         }
+    }
+
+    /**
+     * 初始化Bean的过程
+     */
+    private Object initializeBean(String beanName, Object bean, BeanDefinition beanDefinition) {
+        // 1. 执行 BeanPostProcessor Before 处理
+        Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
+
+        // TODO Bean的初始化方法
+        invokeInitMethods(beanName, wrappedBean, beanDefinition);
+
+        // 2. 执行 BeanPostProcessor After 处理
+        wrappedBean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
+        return wrappedBean;
+    }
+
+    /**
+     * 初始化方法
+     */
+    private void invokeInitMethods(String beanName, Object wrappedBean, BeanDefinition beanDefinition) {
+
+    }
+
+    @Override
+    public Object applyBeanPostProcessorsBeforeInitialization(Object existingBean, String beanName) throws BeansException {
+        Object result = existingBean;
+        for (BeanPostProcessor processor : getBeanPostProcessors()) {
+            Object current = processor.postProcessBeforeInitialization(result, beanName);
+            if (null == current) return result;
+            result = current;
+        }
+        return result;
+    }
+
+    @Override
+    public Object applyBeanPostProcessorsAfterInitialization(Object existingBean, String beanName) throws BeansException {
+        Object result = existingBean;
+        for (BeanPostProcessor processor : getBeanPostProcessors()) {
+            Object current = processor.postProcessAfterInitialization(result, beanName);
+            if (null == current) return result;
+            result = current;
+        }
+        return result;
     }
 
     public void setInstantiation(InstantiationStrategy instantiation) {

@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-beans" />
+        <module name="spring-context" />
         <module name="spring-core" />
         <module name="spring-common" />
       </profile>
@@ -15,6 +16,7 @@
       <module name="mini-spring" target="1.8" />
       <module name="spring-beans" target="1.8" />
       <module name="spring-common" target="1.8" />
+      <module name="spring-context" target="1.8" />
       <module name="spring-core" target="1.8" />
     </bytecodeTargetLevel>
   </component>

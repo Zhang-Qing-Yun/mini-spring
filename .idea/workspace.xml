@@ -21,14 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="9ce83f78-b6f0-4704-865d-8d1f70b072cb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/BeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/ConfigurableListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/ConfigurableListableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/AutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/AutowireCapableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/ConfigurableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/ConfigurableBeanFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/BeanDefinitionRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/BeanDefinitionRegistry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/BeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/BeanDefinitionReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/test/java/com/qingyun/springframework/beansTest/BeanFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/test/java/com/qingyun/springframework/beansTest/BeanFactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/test/java/com/qingyun/springframework/beansTest/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/test/java/com/qingyun/springframework/beansTest/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +38,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -61,9 +61,15 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
-  <component name="RunManager" selected="JUnit.SourceLoadTest.test_xml">
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.qingyun.springframework.context.test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ContextTest.test_context">
     <configuration name="BeanFactoryTest.beanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-beans" />
       <extension name="coverage">
@@ -91,6 +97,22 @@
       <option name="PACKAGE_NAME" value="com.qingyun.springframework.beansTest" />
       <option name="MAIN_CLASS_NAME" value="com.qingyun.springframework.beansTest.BeanFactoryTest" />
       <option name="METHOD_NAME" value="beanTest3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContextTest.test_context" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-context" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.qingyun.springframework.context.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.qingyun.springframework.context.test" />
+      <option name="MAIN_CLASS_NAME" value="com.qingyun.springframework.context.test.ContextTest" />
+      <option name="METHOD_NAME" value="test_context" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -130,6 +152,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ContextTest.test_context" />
         <item itemvalue="JUnit.SourceLoadTest.test_xml" />
         <item itemvalue="JUnit.BeanFactoryTest.beanTest3" />
         <item itemvalue="JUnit.BeanFactoryTest.beanTest" />
@@ -151,7 +174,8 @@
       <workItem from="1629247964281" duration="2196000" />
       <workItem from="1629260446047" duration="23721000" />
       <workItem from="1629336264905" duration="1267000" />
-      <workItem from="1629418963870" duration="10353000" />
+      <workItem from="1629418963870" duration="12464000" />
+      <workItem from="1629513688210" duration="15421000" />
     </task>
     <servers />
   </component>
@@ -171,34 +195,38 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1629431362457">
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser" timestamp="1629552018471">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1629431362457" />
+    <state x="574" y="128" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1629552018471" />
     <state x="388" y="90" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1629197049979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="388" y="90" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1536.824@0.0.1536.824" timestamp="1629197049979" />
+    <state x="511" y="243" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1629534678836">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="511" y="243" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1629534678836" />
     <state x="549" y="111" key="FileChooserDialogImpl" timestamp="1629262765699">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="111" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1629262765699" />
-    <state width="1493" height="222" key="GridCell.Tab.0.bottom" timestamp="1629435923494">
+    <state width="1493" height="222" key="GridCell.Tab.0.bottom" timestamp="1629552068440">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="222" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1629435923494" />
-    <state width="1493" height="222" key="GridCell.Tab.0.center" timestamp="1629435923494">
+    <state width="1493" height="222" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1629552068440" />
+    <state width="1493" height="222" key="GridCell.Tab.0.center" timestamp="1629552068440">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="222" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1629435923494" />
-    <state width="1493" height="222" key="GridCell.Tab.0.left" timestamp="1629435923494">
+    <state width="1493" height="222" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1629552068440" />
+    <state width="1493" height="222" key="GridCell.Tab.0.left" timestamp="1629552068440">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="222" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1629435923494" />
-    <state width="1493" height="222" key="GridCell.Tab.0.right" timestamp="1629435923494">
+    <state width="1493" height="222" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1629552068440" />
+    <state width="1493" height="222" key="GridCell.Tab.0.right" timestamp="1629552068440">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="222" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1629435923494" />
+    <state width="1493" height="222" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1629552068440" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1629303908025">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -219,10 +247,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="408" y="116" key="NewModule_or_Project.wizard/0.0.1536.824@0.0.1536.824" timestamp="1629262790385" />
-    <state x="178" y="73" key="new project wizard" timestamp="1629425452366">
+    <state x="178" y="73" key="new project wizard" timestamp="1629534635855">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="178" y="73" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1629425452366" />
+    <state x="178" y="73" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1629534635855" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1629431276943">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
