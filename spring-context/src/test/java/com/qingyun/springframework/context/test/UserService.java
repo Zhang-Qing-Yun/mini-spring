@@ -1,17 +1,30 @@
 package com.qingyun.springframework.context.test;
 
+import com.qingyun.springframework.beans.factory.DisposableBean;
+import com.qingyun.springframework.beans.factory.InitializingBean;
+
 /**
  * @description：
  * @author: 張青云
  * @create: 2021-08-18 22:54
  **/
-public class UserService {
+public class UserService implements InitializingBean, DisposableBean {
     private String uId;
     private String company;
     private String location;
     private UserDao userDao;
 
     public UserService() {
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("执行：UserService.destroy");
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("执行：UserService.afterPropertiesSet");
     }
 
     public String getuId() {

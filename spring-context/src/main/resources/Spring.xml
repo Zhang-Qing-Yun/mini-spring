@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
 
-    <bean id="userDao" class="com.qingyun.springframework.context.test.UserDao"/>
+    <bean id="userDao" class="com.qingyun.springframework.context.test.UserDao"
+          init-method="initDataMethod" destroy-method="destroyDataMethod"/>
 
     <bean id="userService" class="com.qingyun.springframework.context.test.UserService">
         <property name="uId" value="10001"/>
@@ -9,8 +10,5 @@
         <property name="location" value="深圳"/>
         <property name="userDao" ref="userDao"/>
     </bean>
-
-    <bean class="com.qingyun.springframework.context.test.MyBeanPostProcessor"/>
-    <bean class="com.qingyun.springframework.context.test.MyBeanFactoryPostProcessor"/>
 
 </beans>

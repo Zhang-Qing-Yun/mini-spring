@@ -20,12 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ce83f78-b6f0-4704-865d-8d1f70b072cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/BeanDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/BeanDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/xml/XmlBeanDefinitionReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/src/main/java/com/qingyun/springframework/context/ConfigurableApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/main/java/com/qingyun/springframework/context/ConfigurableApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/src/main/java/com/qingyun/springframework/context/support/AbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/main/java/com/qingyun/springframework/context/support/AbstractApplicationContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-context/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/main/resources/Spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-context/src/test/java/com/qingyun/springframework/context/test/ContextTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/test/java/com/qingyun/springframework/context/test/ContextTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-context/src/test/java/com/qingyun/springframework/context/test/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/test/java/com/qingyun/springframework/context/test/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-context/src/test/java/com/qingyun/springframework/context/test/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/test/java/com/qingyun/springframework/context/test/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +64,7 @@
       <recent name="com.qingyun.springframework.context.test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContextTest.test_context">
+  <component name="RunManager" selected="JUnit.InitAndDestroyTest.testInitAndDestroy">
     <configuration name="BeanFactoryTest.beanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring-beans" />
       <extension name="coverage">
@@ -115,17 +113,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Demo.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring-beans" />
+    <configuration name="InitAndDestroyTest.testInitAndDestroy" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring-context" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.qingyun.springframework.beansTest.*" />
+          <option name="PATTERN" value="com.qingyun.springframework.context.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.qingyun.springframework.beansTest" />
-      <option name="MAIN_CLASS_NAME" value="com.qingyun.springframework.beansTest.Demo" />
-      <option name="METHOD_NAME" value="test1" />
+      <option name="PACKAGE_NAME" value="com.qingyun.springframework.context.test" />
+      <option name="MAIN_CLASS_NAME" value="com.qingyun.springframework.context.test.InitAndDestroyTest" />
+      <option name="METHOD_NAME" value="testInitAndDestroy" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InitAndDestroyTest.testInitAndDestroy" />
         <item itemvalue="JUnit.ContextTest.test_context" />
         <item itemvalue="JUnit.SourceLoadTest.test_xml" />
         <item itemvalue="JUnit.BeanFactoryTest.beanTest3" />
         <item itemvalue="JUnit.BeanFactoryTest.beanTest" />
-        <item itemvalue="JUnit.Demo.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -172,7 +170,8 @@
       <workItem from="1629260446047" duration="23721000" />
       <workItem from="1629336264905" duration="1267000" />
       <workItem from="1629418963870" duration="12464000" />
-      <workItem from="1629513688210" duration="21919000" />
+      <workItem from="1629513688210" duration="22544000" />
+      <workItem from="1629593721185" duration="2520000" />
     </task>
     <servers />
   </component>
@@ -208,22 +207,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="111" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1629262765699" />
-    <state width="1493" height="222" key="GridCell.Tab.0.bottom" timestamp="1629555027225">
+    <state width="1493" height="222" key="GridCell.Tab.0.bottom" timestamp="1629597174536">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="222" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1629555027225" />
-    <state width="1493" height="222" key="GridCell.Tab.0.center" timestamp="1629555027225">
+    <state width="1493" height="222" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1629597174536" />
+    <state width="1493" height="222" key="GridCell.Tab.0.center" timestamp="1629597174536">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="222" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1629555027225" />
-    <state width="1493" height="222" key="GridCell.Tab.0.left" timestamp="1629555027224">
+    <state width="1493" height="222" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1629597174536" />
+    <state width="1493" height="222" key="GridCell.Tab.0.left" timestamp="1629597174536">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="222" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1629555027224" />
-    <state width="1493" height="222" key="GridCell.Tab.0.right" timestamp="1629555027225">
+    <state width="1493" height="222" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1629597174536" />
+    <state width="1493" height="222" key="GridCell.Tab.0.right" timestamp="1629597174536">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="222" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1629555027225" />
+    <state width="1493" height="222" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1629597174536" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1629303908025">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
