@@ -81,6 +81,11 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
                     //  A依赖B，获取B的实例
                     BeanReference beanReference = (BeanReference) value;
                     value = getBean(beanReference.getBeanName());
+                    //  如果是FactoryBean则需要再getBean一次，因为上一次只是将FactoryBean当作工厂进行了实例化，
+                    //  再来一次才是通过FactoryBean获取期待的对象
+                    if (value instanceof FactoryBean) {
+                        value = getBean(beanReference.getBeanName());
+                    }
                 }
                 // 属性填充
                 BeanUtil.setFieldValue(bean, name, value);
@@ -169,6 +174,11 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
      * 注册实现了销毁方法的Bean实例对象
      */
     protected void registerDisposableBeanIfNecessary(String beanName, Object bean, BeanDefinition beanDefinition) {
+        //  非Singleton类型的Bean不执行销毁方法
+        if (!beanDefinition.isSingleton()) {
+            return;
+        }
+
         if (bean instanceof DisposableBean || StrUtil.isNotEmpty(beanDefinition.getDestroyMethodName())) {
             registerDisposableBean(beanName, new DisposableBeanAdapter(bean, beanName, beanDefinition));
         }

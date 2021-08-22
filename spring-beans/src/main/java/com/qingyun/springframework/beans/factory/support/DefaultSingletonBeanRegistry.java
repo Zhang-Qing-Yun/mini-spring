@@ -21,6 +21,9 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
     //  保存实现了销毁方法的Bean实例
     private final Map<String, Object> disposableBeans = new LinkedHashMap<>();
 
+    //  用来代表null
+    protected static final Object NULL_OBJECT = new Object();
+
     @Override
     public Object getSingleton(String beanName) {
         return singletonObjects.get(beanName);

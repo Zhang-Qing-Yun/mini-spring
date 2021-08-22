@@ -6,14 +6,37 @@ package com.qingyun.springframework.beansTest;
  * @create: 2021-08-18 22:54
  **/
 public class UserService {
-    private String uId;
 
+    private String uId;
+    private String company;
+    private String location;
     private UserDao userDao;
 
-    public UserService() {
+    public String queryUserInfo() {
+        return userDao.queryUserName(uId) + "," + company + "," + location;
     }
 
-    public void queryUserInfo() {
-        System.out.println("查询用户信息：" + userDao.queryUserName(uId));
+    public String getuId() {
+        return uId;
+    }
+
+    public void setuId(String uId) {
+        this.uId = uId;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }

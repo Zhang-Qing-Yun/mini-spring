@@ -1,6 +1,7 @@
 package com.qingyun.springframework.beans.factory.support;
 
 import com.qingyun.springframework.beans.BeansException;
+import com.qingyun.springframework.beans.factory.FactoryBean;
 import com.qingyun.springframework.beans.factory.config.BeanDefinition;
 import com.qingyun.springframework.beans.factory.config.BeanPostProcessor;
 import com.qingyun.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -14,7 +15,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author: 張青云
  * @create: 2021-08-18 18:09
  **/
-public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements ConfigurableBeanFactory {
+public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport implements ConfigurableBeanFactory {
     //  用来存储BeanPostProcessor
     private final List<BeanPostProcessor> beanPostProcessors = new CopyOnWriteArrayList<>();
 
@@ -23,19 +24,7 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 
     @Override
     public Object getBean(String name) throws BeansException {  // 此处应用模板方法模式
-        //  先去查单例注册表
-        Object singleton = getSingleton(name);
-        if (singleton != null) {
-            return singleton;
-        }
-
-        //  当单例注册表中不存在单例对象时，需要去获取bean的定义信息并且去创建bean
-        BeanDefinition beanDefinition = getBeanDefinition(name);
-        Object bean = createBean(name, beanDefinition, null);
-
-        //  将创建的bean对象添加到单例注册表中
-        registerSingleton(name, bean);
-        return bean;
+        return doGetBean(name, null);
     }
 
     @Override
@@ -54,16 +43,40 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
         this.beanPostProcessors.add(beanPostProcessor);
     }
 
-    protected <T> T doGetBean(final String name, final Object[] args) {
+    protected Object doGetBean(final String name, final Object[] args) {
+        //  先去查单例注册表
         Object singleton = getSingleton(name);
         if (singleton != null) {
-            return (T) singleton;
+            // 如果是 FactoryBean，则需要调用 FactoryBean#getObject
+            //  对于FactoryBean来说，第一次是将其当作Bean来实例化然后放到了单例注册表中，此后的获取都是将其当作工厂
+            return getObjectForBeanInstance(singleton, name);
         }
 
+        //  当单例注册表中不存在单例对象时，需要去获取bean的定义信息并且去创建bean
         BeanDefinition beanDefinition = getBeanDefinition(name);
-        T bean = (T) createBean(name, beanDefinition, args);
-        registerSingleton(name, bean);
+        Object bean = createBean(name, beanDefinition, args);
+
+        //  将创建的bean对象添加到单例注册表中
+        if (beanDefinition.isSingleton()) {
+            registerSingleton(name, bean);
+        }
         return bean;
+    }
+
+    private Object getObjectForBeanInstance(Object beanInstance, String beanName) {
+        if (!(beanInstance instanceof FactoryBean)) {
+            return beanInstance;
+        }
+
+        //  FactoryBean是否生产过对象
+        Object object = getCachedObjectForFactoryBean(beanName);
+
+        if (object == null) {
+            FactoryBean<?> factoryBean = (FactoryBean<?>) beanInstance;
+            object = getObjectFromFactoryBean(factoryBean, beanName);
+        }
+
+        return object;
     }
 
     /**
