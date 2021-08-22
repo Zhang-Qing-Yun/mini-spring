@@ -4,6 +4,7 @@ import com.qingyun.springframework.beans.BeansException;
 import com.qingyun.springframework.beans.factory.config.BeanDefinition;
 import com.qingyun.springframework.beans.factory.config.BeanPostProcessor;
 import com.qingyun.springframework.beans.factory.config.ConfigurableBeanFactory;
+import com.qingyun.springframework.util.ClassUtils;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -16,6 +17,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry implements ConfigurableBeanFactory {
     //  用来存储BeanPostProcessor
     private final List<BeanPostProcessor> beanPostProcessors = new CopyOnWriteArrayList<>();
+
+    //  类加载器
+    private ClassLoader beanClassLoader = ClassUtils.getDefaultClassLoader();
 
     @Override
     public Object getBean(String name) throws BeansException {  // 此处应用模板方法模式
@@ -82,5 +86,9 @@ public abstract class AbstractBeanFactory extends DefaultSingletonBeanRegistry i
 
     public List<BeanPostProcessor> getBeanPostProcessors() {
         return this.beanPostProcessors;
+    }
+
+    public ClassLoader getBeanClassLoader() {
+        return this.beanClassLoader;
     }
 }
