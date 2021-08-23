@@ -10,7 +10,7 @@ import java.util.EventListener;
 public interface ApplicationListener<E extends ApplicationEvent> extends EventListener {
 
     /**
-     * 监听一个事件
+     * 监听的事件发生时触发的操作
      */
     void onApplicationEvent(E event);
 

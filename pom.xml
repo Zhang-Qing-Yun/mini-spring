@@ -13,6 +13,7 @@
         <module>spring-core</module>
         <module>spring-common</module>
         <module>spring-context</module>
+        <module>spring-aop</module>
     </modules>
 
     <dependencies>

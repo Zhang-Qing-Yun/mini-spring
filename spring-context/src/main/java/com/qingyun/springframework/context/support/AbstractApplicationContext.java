@@ -96,6 +96,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
 
     @Override
     public void publishEvent(ApplicationEvent event) {
+        //  每次发布事件都需要通过广播者来通知监听该事件的监听者
         applicationEventMulticaster.multicastEvent(event);
     }
 
