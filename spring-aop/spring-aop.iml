@@ -12,6 +12,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="spring-common" />
+    <orderEntry type="module" module-name="spring-context" />
+    <orderEntry type="module" module-name="spring-beans" />
+    <orderEntry type="module" module-name="spring-core" />
     <orderEntry type="library" name="Maven: cglib:cglib:3.1" level="project" />
     <orderEntry type="library" name="Maven: org.ow2.asm:asm:4.2" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.9.6" level="project" />

@@ -43,6 +43,7 @@ public abstract class AbstractApplicationContext extends DefaultResourceLoader i
         invokeBeanFactoryPostProcessors(beanFactory);
 
         // 5. BeanPostProcessor 需要提前于其他 Bean 对象实例化之前执行注册操作
+        //  然后在接下来的每一个Bean创建的时候都会将这些BeanPostProcessor过一遍
         registerBeanPostProcessors(beanFactory);
 
         // 6. 初始化事件发布者
