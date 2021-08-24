@@ -1,6 +1,7 @@
 package com.qingyun.springframework.beans.factory.config;
 
 import com.qingyun.springframework.beans.factory.HierarchicalBeanFactory;
+import com.qingyun.springframework.util.StringValueResolver;
 
 /**
  * @description：
@@ -22,5 +23,15 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, Single
      * 销毁单例对象
      */
     void destroySingletons();
+
+    /**
+     * 增加一个StringValueResolver
+     */
+    void addEmbeddedValueResolver(StringValueResolver valueResolver);
+
+    /**
+     * 解决一个EmbeddedValue
+     */
+    String resolveEmbeddedValue(String value);
 
 }

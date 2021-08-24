@@ -6,6 +6,7 @@ import com.qingyun.springframework.beans.factory.config.BeanDefinition;
 import com.qingyun.springframework.beans.factory.config.BeanPostProcessor;
 import com.qingyun.springframework.beans.factory.config.ConfigurableBeanFactory;
 import com.qingyun.springframework.util.ClassUtils;
+import com.qingyun.springframework.util.StringValueResolver;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -18,6 +19,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport implements ConfigurableBeanFactory {
     //  用来存储BeanPostProcessor
     private final List<BeanPostProcessor> beanPostProcessors = new CopyOnWriteArrayList<>();
+
+    //  用来存储字符串解析器
+    private final List<StringValueResolver> embeddedValueResolvers = new CopyOnWriteArrayList<>();
 
     //  类加载器
     private ClassLoader beanClassLoader = ClassUtils.getDefaultClassLoader();
@@ -41,6 +45,20 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
     public void addBeanPostProcessor(BeanPostProcessor beanPostProcessor){
         this.beanPostProcessors.remove(beanPostProcessor);
         this.beanPostProcessors.add(beanPostProcessor);
+    }
+
+    @Override
+    public void addEmbeddedValueResolver(StringValueResolver valueResolver) {
+        this.embeddedValueResolvers.add(valueResolver);
+    }
+
+    @Override
+    public String resolveEmbeddedValue(String value) {
+        String result = value;
+        for (StringValueResolver resolver : this.embeddedValueResolvers) {
+            result = resolver.resolveStringValue(result);
+        }
+        return result;
     }
 
     protected Object doGetBean(final String name, final Object[] args) {
