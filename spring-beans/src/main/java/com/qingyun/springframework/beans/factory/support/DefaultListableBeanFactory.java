@@ -29,7 +29,7 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
     public BeanDefinition getBeanDefinition(String beanName) throws BeansException {
         BeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
         if (beanDefinition == null) {
-            throw new BeansException("No bean named '" + beanName + "' is defined");
+            throw new BeansException("No com.qingyun.springframework.aop.test.bean named '" + beanName + "' is defined");
         }
         return beanDefinition;
     }
@@ -78,6 +78,6 @@ public class DefaultListableBeanFactory extends AbstractAutowireCapableBeanFacto
             return getBean(beanNames.get(0), requiredType);
         }
 
-        throw new BeansException(requiredType + "expected single bean but found " + beanNames.size() + ": " + beanNames);
+        throw new BeansException(requiredType + "expected single com.qingyun.springframework.aop.test.bean but found " + beanNames.size() + ": " + beanNames);
     }
 }

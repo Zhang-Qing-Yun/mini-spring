@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
 
-    <bean id="proxyUserDao" class="com.qingyun.springframework.context.test.ProxyBeanFactory"/>
+    <com.qingyun.springframework.aop.test.bean id="proxyUserDao" class="com.qingyun.springframework.context.test.ProxyBeanFactory"/>
 
-    <bean id="userService" class="com.qingyun.springframework.context.test.UserService">
+    <com.qingyun.springframework.aop.test.bean id="userService" class="com.qingyun.springframework.context.test.UserService">
         <property name="uId" value="10001"/>
         <property name="company" value="腾讯"/>
         <property name="location" value="深圳"/>
         <property name="userDao" ref="proxyUserDao"/>
-    </bean>
+    </com.qingyun.springframework.aop.test.bean>
 
 </beans>

@@ -1,4 +1,4 @@
-import bean.IUserService;
+import com.qingyun.springframework.aop.test.bean.IUserService;
 import com.qingyun.springframework.context.support.ClassPathXmlApplicationContext;
 import org.junit.Test;
 

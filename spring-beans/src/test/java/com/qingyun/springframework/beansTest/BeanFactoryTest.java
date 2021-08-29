@@ -17,13 +17,13 @@ public class BeanFactoryTest {
     public void beanTest1() {
         // 1.初始化 BeanFactory
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
-        // 2.注册 bean
+        // 2.注册 com.qingyun.springframework.aop.test.bean
         BeanDefinition beanDefinition = new BeanDefinition(Object.class);
         beanFactory.registerBeanDefinition("object", beanDefinition);
 
-        // 3.第一次获取 bean
+        // 3.第一次获取 com.qingyun.springframework.aop.test.bean
         Object object = beanFactory.getBean("object");
-        // 4.第二次获取 bean from Singleton
+        // 4.第二次获取 com.qingyun.springframework.aop.test.bean from Singleton
         Object object2 = beanFactory.getBean("object");
         assert object == object2;
     }
@@ -32,11 +32,11 @@ public class BeanFactoryTest {
     public void beanTest2() {
         // 1.初始化 BeanFactory
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
-        // 2.注册 bean
+        // 2.注册 com.qingyun.springframework.aop.test.bean
         BeanDefinition beanDefinition = new BeanDefinition(UserService.class);
         beanFactory.registerBeanDefinition("userService", beanDefinition);
 
-        // 3.获取 bean
+        // 3.获取 com.qingyun.springframework.aop.test.bean
         UserService userService = (UserService) beanFactory.getBean("userService");
 
 //        System.out.println(userService.getUser());

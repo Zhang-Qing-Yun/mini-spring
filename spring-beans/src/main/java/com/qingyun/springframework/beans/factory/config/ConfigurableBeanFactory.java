@@ -1,7 +1,9 @@
 package com.qingyun.springframework.beans.factory.config;
 
 import com.qingyun.springframework.beans.factory.HierarchicalBeanFactory;
+import com.qingyun.springframework.core.convert.ConversionService;
 import com.qingyun.springframework.util.StringValueResolver;
+import com.sun.istack.internal.Nullable;
 
 /**
  * @description：
@@ -33,5 +35,16 @@ public interface ConfigurableBeanFactory extends HierarchicalBeanFactory, Single
      * 解决一个EmbeddedValue
      */
     String resolveEmbeddedValue(String value);
+
+    /**
+     * 设置类型转换器
+     */
+    void setConversionService(ConversionService conversionService);
+
+    /**
+     * 获取类型转换器
+     */
+    @Nullable
+    ConversionService getConversionService();
 
 }

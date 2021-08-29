@@ -5,6 +5,7 @@ import com.qingyun.springframework.beans.factory.FactoryBean;
 import com.qingyun.springframework.beans.factory.config.BeanDefinition;
 import com.qingyun.springframework.beans.factory.config.BeanPostProcessor;
 import com.qingyun.springframework.beans.factory.config.ConfigurableBeanFactory;
+import com.qingyun.springframework.core.convert.ConversionService;
 import com.qingyun.springframework.util.ClassUtils;
 import com.qingyun.springframework.util.StringValueResolver;
 
@@ -25,6 +26,9 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 
     //  类加载器
     private ClassLoader beanClassLoader = ClassUtils.getDefaultClassLoader();
+
+    //  类型转换器
+    private ConversionService conversionService;
 
     @Override
     public Object getBean(String name) throws BeansException {  // 此处应用模板方法模式
@@ -61,6 +65,23 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
         return result;
     }
 
+    @Override
+    public void setConversionService(ConversionService conversionService) {
+        this.conversionService = conversionService;
+    }
+
+    @Override
+    public ConversionService getConversionService() {
+        return conversionService;
+    }
+
+    @Override
+    public boolean containsBean(String name) {
+        return containsBeanDefinition(name);
+    }
+
+    protected abstract boolean containsBeanDefinition(String beanName);
+
     protected Object doGetBean(final String name, final Object[] args) {
         //  先去查单例注册表
         Object singleton = getSingleton(name);
@@ -72,13 +93,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 
         //  当单例注册表中不存在单例对象时，需要去获取bean的定义信息并且去创建bean
         BeanDefinition beanDefinition = getBeanDefinition(name);
-        Object bean = createBean(name, beanDefinition, args);
-
-        //  将创建的bean对象添加到单例注册表中
-        if (beanDefinition.isSingleton()) {
-            registerSingleton(name, bean);
-        }
-        return bean;
+        return createBean(name, beanDefinition, args);
     }
 
     private Object getObjectForBeanInstance(Object beanInstance, String beanName) {

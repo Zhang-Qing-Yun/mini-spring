@@ -30,7 +30,7 @@ public interface BeanFactory {
      * @param name bean的名字
      * @param requiredType bean的类型
      * @param <T> bean的类型
-     * @return bean
+     * @return com.qingyun.springframework.aop.test.bean
      * @throws BeansException 出错时抛出该异常
      */
     <T> T getBean(String name, Class<T> requiredType) throws BeansException;
@@ -43,4 +43,11 @@ public interface BeanFactory {
      * @throws BeansException 出错时抛出该异常
      */
     <T> T getBean(Class<T> requiredType) throws BeansException;
+
+    /**
+     * 是否有指定名字的Bean
+     * @param name Bean的名字
+     * @return 是否有
+     */
+    boolean containsBean(String name);
 }

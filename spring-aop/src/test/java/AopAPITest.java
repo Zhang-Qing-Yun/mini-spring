@@ -1,6 +1,6 @@
-import bean.IUserService;
-import bean.UserService;
-import bean.UserServiceInterceptor;
+import com.qingyun.springframework.aop.test.bean.IUserService;
+import com.qingyun.springframework.aop.test.bean.UserService;
+import com.qingyun.springframework.aop.test.bean.UserServiceInterceptor;
 import com.qingyun.springframework.aop.AdvisedSupport;
 import com.qingyun.springframework.aop.TargetSource;
 import com.qingyun.springframework.aop.aspectj.AspectJExpressionPointcut;
@@ -23,7 +23,7 @@ public class AopAPITest {
         AdvisedSupport advisedSupport = new AdvisedSupport();
         advisedSupport.setTargetSource(new TargetSource(userService));
         advisedSupport.setMethodInterceptor(new UserServiceInterceptor());
-        advisedSupport.setMethodMatcher(new AspectJExpressionPointcut("execution(* bean.IUserService.*(..))"));
+        advisedSupport.setMethodMatcher(new AspectJExpressionPointcut("execution(* com.qingyun.springframework.aop.test.bean.IUserService.*(..))"));
 
         // 代理对象(JdkDynamicAopProxy)
         IUserService proxy_jdk = (IUserService) new JdkDynamicAopProxy(advisedSupport).getProxy();

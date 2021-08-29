@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
 
-    <bean class="com.qingyun.springframework.context.test.event.ContextRefreshedEventListener"/>
+    <com.qingyun.springframework.aop.test.bean class="com.qingyun.springframework.context.test.event.ContextRefreshedEventListener"/>
 
-    <bean class="com.qingyun.springframework.context.test.event.CustomEventListener"/>
+    <com.qingyun.springframework.aop.test.bean class="com.qingyun.springframework.context.test.event.CustomEventListener"/>
 
-    <bean class="com.qingyun.springframework.context.test.event.ContextClosedEventListener"/>
+    <com.qingyun.springframework.aop.test.bean class="com.qingyun.springframework.context.test.event.ContextClosedEventListener"/>
 
 </beans>

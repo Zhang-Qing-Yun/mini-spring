@@ -9,7 +9,7 @@ public interface SingletonBeanRegistry {
     /**
      * 根据提供的beanName获取单例对象
      * @param beanName 要查找的bean的名字
-     * @return bean
+     * @return com.qingyun.springframework.aop.test.bean
      */
     Object getSingleton(String beanName);
 

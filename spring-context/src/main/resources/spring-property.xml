@@ -5,13 +5,13 @@
 	         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--替换占位符-->
-    <bean class="com.qingyun.springframework.beans.factory.PropertyPlaceholderConfigurer">
+    <com.qingyun.springframework.aop.test.bean class="com.qingyun.springframework.beans.factory.PropertyPlaceholderConfigurer">
         <!--配置文件的路径-->
         <property name="location" value="classpath:spring.properties"/>
-    </bean>
+    </com.qingyun.springframework.aop.test.bean>
 
-    <bean id="userService" class="com.qingyun.springframework.context.test.annotationTest.UserService">
+    <com.qingyun.springframework.aop.test.bean id="userService" class="com.qingyun.springframework.context.test.annotationTest.UserService">
         <property name="token" value="${token}"/>
-    </bean>
+    </com.qingyun.springframework.aop.test.bean>
 
 </beans>

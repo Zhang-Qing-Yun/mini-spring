@@ -1,18 +1,20 @@
 package com.qingyun.springframework.beans.annotation;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.util.TypeUtil;
 import com.qingyun.springframework.beans.BeansException;
 import com.qingyun.springframework.beans.factory.BeanFactory;
 import com.qingyun.springframework.beans.factory.BeanFactoryAware;
 import com.qingyun.springframework.beans.factory.ConfigurableListableBeanFactory;
 import com.qingyun.springframework.beans.factory.PropertyValues;
 import com.qingyun.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
+import com.qingyun.springframework.core.convert.ConversionService;
 import com.qingyun.springframework.util.ClassUtils;
 
 import java.lang.reflect.Field;
 
 /**
- * @description：
+ * @description： 如果开启了包扫描，则会在包扫描结束后将该类的定义信息添加到BeanFactory中
  * @author: 張青云
  * @create: 2021-08-24 23:42
  **/
@@ -36,8 +38,18 @@ public class AutowiredAnnotationBeanPostProcessor implements InstantiationAwareB
         for (Field field : declaredFields) {
             Value valueAnnotation = field.getAnnotation(Value.class);
             if (null != valueAnnotation) {
-                String value = valueAnnotation.value();
-                value = beanFactory.resolveEmbeddedValue(value);
+                Object value = valueAnnotation.value();
+                value = beanFactory.resolveEmbeddedValue((String) value);
+
+                // 类型转换
+                Class<?> sourceType = value.getClass();
+                Class<?> targetType = (Class<?>) TypeUtil.getType(field);
+                ConversionService conversionService = beanFactory.getConversionService();
+                if (conversionService != null) {
+                    if (conversionService.canConvert(sourceType, targetType)) {
+                        value = conversionService.convert(value, targetType);
+                    }
+                }
                 BeanUtil.setFieldValue(bean, field.getName(), value);
             }
         }
@@ -66,6 +78,11 @@ public class AutowiredAnnotationBeanPostProcessor implements InstantiationAwareB
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
         return null;
+    }
+
+    @Override
+    public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
+        return true;
     }
 
     @Override

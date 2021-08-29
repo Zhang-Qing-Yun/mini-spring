@@ -1,5 +1,7 @@
 package com.qingyun.springframework.aop;
 
+import com.qingyun.springframework.util.ClassUtils;
+
 /**
  * @description： 被代理的目标对象
  * @author: 張青云
@@ -15,8 +17,10 @@ public class TargetSource {
     /**
      * 获取目标类的类型
      */
-    public Class<?>[] getTargetClass(){
-        return this.target.getClass().getInterfaces();
+    public Class<?>[] getTargetClass() {
+        Class<?> clazz = this.target.getClass();
+        clazz = ClassUtils.isCglibProxyClass(clazz) ? clazz.getSuperclass() : clazz;
+        return clazz.getInterfaces();
     }
 
     /**

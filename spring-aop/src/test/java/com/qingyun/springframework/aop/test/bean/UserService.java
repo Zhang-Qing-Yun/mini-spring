@@ -1,4 +1,4 @@
-package bean;
+package com.qingyun.springframework.aop.test.bean;
 
 import java.util.Random;
 
