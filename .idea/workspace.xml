@@ -20,34 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ce83f78-b6f0-4704-865d-8d1f70b072cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aop/src/main/java/com/qingyun/springframework/aop/TargetSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/qingyun/springframework/aop/TargetSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aop/src/main/java/com/qingyun/springframework/aop/framework/autoproxy/DefaultAdvisorAutoProxyCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aop/src/main/java/com/qingyun/springframework/aop/framework/autoproxy/DefaultAdvisorAutoProxyCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aop/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aop/src/main/resources/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aop/src/test/java/AopAPITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aop/src/test/java/AopAPITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aop/src/test/java/AopTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aop/src/test/java/AopTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aop/src/test/java/bean/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aop/src/test/java/com/qingyun/springframework/aop/test/bean/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aop/src/test/java/bean/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aop/src/test/java/com/qingyun/springframework/aop/test/bean/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aop/src/test/java/bean/UserServiceBeforeAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aop/src/test/java/com/qingyun/springframework/aop/test/bean/UserServiceBeforeAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-aop/src/test/java/bean/UserServiceInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-aop/src/test/java/com/qingyun/springframework/aop/test/bean/UserServiceInterceptor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/annotation/AutowiredAnnotationBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/annotation/AutowiredAnnotationBeanPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/BeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/BeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/PropertyValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/PropertyValues.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/ConfigurableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/ConfigurableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/InstantiationAwareBeanPostProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/InstantiationAwareBeanPostProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/SingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/config/SingletonBeanRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/AbstractBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/AbstractBeanFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DefaultListableBeanFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DefaultListableBeanFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DisposableBeanAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DisposableBeanAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/resources/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/test/java/com/qingyun/springframework/beansTest/BeanFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/test/java/com/qingyun/springframework/beansTest/BeanFactoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/src/main/java/com/qingyun/springframework/context/support/AbstractApplicationContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/main/java/com/qingyun/springframework/context/support/AbstractApplicationContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/src/main/resources/Spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/main/resources/Spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/src/main/resources/event.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/main/resources/event.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/src/main/resources/spring-annotation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/main/resources/spring-annotation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-context/src/main/resources/spring-property.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-context/src/main/resources/spring-property.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +236,7 @@
       <workItem from="1629982953810" duration="9060000" />
       <workItem from="1630031902490" duration="2239000" />
       <workItem from="1630155101307" duration="8004000" />
-      <workItem from="1630199940014" duration="13083000" />
+      <workItem from="1630199940014" duration="13607000" />
     </task>
     <servers />
   </component>

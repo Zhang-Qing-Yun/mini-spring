@@ -41,7 +41,7 @@ public class DefaultSingletonBeanRegistry implements SingletonBeanRegistry {
         Object singletonObject = singletonObjects.get(beanName);
         if (null == singletonObject) {
             singletonObject = earlySingletonObjects.get(beanName);
-            // 判断二级缓存中是否有对象，这个对象就是代理对象，因为只有代理对象才会放到二级缓存中
+            // 判断二级缓存中是否有对象
             if (singletonObject == null && allowEarlyReference) {
                 ObjectFactory<?> singletonFactory = singletonFactories.get(beanName);
                 if (singletonFactory != null) {
