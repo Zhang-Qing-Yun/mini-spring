@@ -2,6 +2,7 @@ package com.qingyun.springframework.context.support;
 
 import com.qingyun.springframework.beans.BeansException;
 import com.qingyun.springframework.beans.factory.ConfigurableListableBeanFactory;
+import com.qingyun.springframework.beans.factory.config.BeanDefinition;
 import com.qingyun.springframework.beans.factory.support.DefaultListableBeanFactory;
 
 /**
@@ -28,6 +29,16 @@ public abstract class AbstractRefreshableApplicationContext extends AbstractAppl
 
     private DefaultListableBeanFactory createBeanFactory() {
         return new DefaultListableBeanFactory();
+    }
+
+    //  向容器中注册一个BeanDefinition
+    public void registerBeanDefinition(String beanName, BeanDefinition beanDefinition) {
+        this.beanFactory.registerBeanDefinition(beanName, beanDefinition);
+    }
+
+    //  再次实例化容器中所有的Bean
+    public void reInstantiateSingletons() {
+        beanFactory.preInstantiateSingletons();
     }
 
     protected abstract void loadBeanDefinitions(DefaultListableBeanFactory beanFactory);

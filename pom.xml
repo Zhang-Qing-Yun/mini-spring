@@ -14,6 +14,7 @@
         <module>spring-common</module>
         <module>spring-context</module>
         <module>spring-aop</module>
+        <module>spring-web</module>
     </modules>
 
     <dependencies>
