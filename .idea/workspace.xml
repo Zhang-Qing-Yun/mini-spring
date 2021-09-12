@@ -19,9 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ce83f78-b6f0-4704-865d-8d1f70b072cb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/spring-beans/src/main/java/com/qingyun/springframework/beans/factory/support/DefaultSingletonBeanRegistry.java" afterDir="false" />
-    </list>
+    <list default="true" id="9ce83f78-b6f0-4704-865d-8d1f70b072cb" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +36,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/Zhang-Qing-Yun/mini-spring.git" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1wqraVBPlpM6C84DK9ibFpw2mt5" />
   <component name="ProjectLevelVcsManager">
@@ -236,7 +241,20 @@
       <workItem from="1629982953810" duration="9060000" />
       <workItem from="1630031902490" duration="2239000" />
       <workItem from="1630155101307" duration="8004000" />
-      <workItem from="1630199940014" duration="13607000" />
+      <workItem from="1630199940014" duration="17976000" />
+      <workItem from="1630549457795" duration="592000" />
+      <workItem from="1630570248946" duration="10678000" />
+      <workItem from="1630633849883" duration="7112000" />
+      <workItem from="1630716701603" duration="3747000" />
+      <workItem from="1630804214767" duration="6552000" />
+      <workItem from="1630897035051" duration="2008000" />
+      <workItem from="1630975037638" duration="10253000" />
+      <workItem from="1631020072094" duration="1973000" />
+      <workItem from="1631061107935" duration="1836000" />
+      <workItem from="1631147549423" duration="1770000" />
+      <workItem from="1631235102754" duration="1776000" />
+      <workItem from="1631324280683" duration="1687000" />
+      <workItem from="1631424031043" duration="318000" />
     </task>
     <servers />
   </component>
@@ -292,22 +310,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="111" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1629262765699" />
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1630221491575">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom" timestamp="1630234862782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1630221491575" />
-    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1630221491575">
+    <state width="1493" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1630234862782" />
+    <state width="1493" height="208" key="GridCell.Tab.0.center" timestamp="1630234862782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1630221491575" />
-    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1630221491575">
+    <state width="1493" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1630234862782" />
+    <state width="1493" height="208" key="GridCell.Tab.0.left" timestamp="1630234862782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1630221491575" />
-    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1630221491575">
+    <state width="1493" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1630234862782" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right" timestamp="1630234862782">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1630221491575" />
+    <state width="1493" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1630234862782" />
     <state width="1493" height="249" key="GridCell.Tab.1.bottom" timestamp="1630210417318">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -336,6 +354,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1629805102755" />
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1631021784033">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="563" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1631021784033" />
     <state x="268" y="141" width="1000" height="640" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1630208667320">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -348,10 +370,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1629801606425" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1629431276943">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1630996514643">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1629431276943" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1630996514643" />
     <state x="406" y="95" key="spring file set editor" timestamp="1629800989535">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

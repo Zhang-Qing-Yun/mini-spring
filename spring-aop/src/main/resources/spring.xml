@@ -2,23 +2,23 @@
 <beans>
 
     <!--要被切入的类，最终会为其创建一个代理类，方法的调用都是通过代理类来完成的-->
-    <com.qingyun.springframework.aop.test.bean id="userService" class="com.qingyun.springframework.aop.test.bean.UserService"/>
+    <bean id="userService" class="com.qingyun.springframework.aop.test.bean.UserService"/>
 
     <!--用于创建代理类的类-->
-    <com.qingyun.springframework.aop.test.bean class="com.qingyun.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+    <bean class="com.qingyun.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
 
     <!--增强的内容-->
-    <com.qingyun.springframework.aop.test.bean id="beforeAdvice" class="com.qingyun.springframework.aop.test.bean.UserServiceBeforeAdvice"/>
+    <bean id="beforeAdvice" class="com.qingyun.springframework.aop.test.bean.UserServiceBeforeAdvice"/>
 
     <!--拦截器，决定如何增强-->
-    <com.qingyun.springframework.aop.test.bean id="methodInterceptor" class="com.qingyun.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor">
+    <bean id="methodInterceptor" class="com.qingyun.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor">
         <property name="advice" ref="beforeAdvice"/>
-    </com.qingyun.springframework.aop.test.bean>
+    </bean>
 
     <!--切面，有切点和拦截器-->
-    <com.qingyun.springframework.aop.test.bean id="pointcutAdvisor" class="com.qingyun.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
+    <bean id="pointcutAdvisor" class="com.qingyun.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
         <property name="expression" value="execution(* com.qingyun.springframework.aop.test.bean.IUserService.*(..))"/>
         <property name="advice" ref="methodInterceptor"/>
-    </com.qingyun.springframework.aop.test.bean>
+    </bean>
 
 </beans>

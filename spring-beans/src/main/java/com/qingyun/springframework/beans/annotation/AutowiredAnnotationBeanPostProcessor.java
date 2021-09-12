@@ -27,6 +27,7 @@ public class AutowiredAnnotationBeanPostProcessor implements InstantiationAwareB
         this.beanFactory = (ConfigurableListableBeanFactory) beanFactory;
     }
 
+    //  完成自动注入
     @Override
     public PropertyValues postProcessPropertyValues(PropertyValues pvs, Object bean, String beanName) throws BeansException {
         // 1. 处理注解 @Value
@@ -39,6 +40,7 @@ public class AutowiredAnnotationBeanPostProcessor implements InstantiationAwareB
             Value valueAnnotation = field.getAnnotation(Value.class);
             if (null != valueAnnotation) {
                 Object value = valueAnnotation.value();
+                //  在这里可以处理占位符的事，我们在PropertyPlaceholderConfigurer执行的时候向容器中添加了字符串解析器
                 value = beanFactory.resolveEmbeddedValue((String) value);
 
                 // 类型转换
